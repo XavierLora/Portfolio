@@ -1,4 +1,4 @@
-<div class="flex flex-col w-full h-fit">
+<div class="flex flex-col w-full h-fit bg-[#151d20]">
     <div class="pt-4 pb-4">
         <app-navbar></app-navbar>
     </div>
@@ -23,24 +23,54 @@
               <p class="text-base sm:text-base text-gray-800 dark:text-neutral-200">January 25, 2024</p>
             </div>
   
-            <p class="text-lg text-gray-800 dark:text-neutral-200">At preline, our mission has always been focused on bringing openness and transparency to the design process. We've always believed that by providing a space where designers can share ongoing work not only empowers them to make better products, it also helps them grow.</p>
-  
-            <p class="text-lg text-gray-800 dark:text-neutral-200">We're proud to be a part of creating a more open culture and to continue building a product that supports this vision.</p>
-  
+            <p class="text-lg text-gray-800 dark:text-neutral-200">Today, we're jumping into the shallow end of the scripting pool. No fancy jargon—just pure, easy, command-line fun.<br> <br>
+
+              One of the most tedious parts of starting a new website has got to be creating the file structure to house all your HTML, CSS and JS. 
+
+              Well, imagine this: you're staring at your screen, faced with a blank project folder. You know what you want to build, and instead of having to spend the 5 minutes to create the file scaffolding, you click one button and BAM. <br> <br>
+              
+              That's where scripting comes in. With just a few clever lines of code, you can automate the boring stuff, scaffold out your project structure, and get straight to the fun part—coding.
+              
+              In this post, we're going to walk you through the process of creating a bash script that'll make your life easier and your projects more efficient. Let's Get Started!</p>
   
             <blockquote class="text-center p-4 sm:px-7">
               <p class="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
-                To say that switching to Preline has been life-changing is an understatement. My business has tripled and I got my life back.
-              </p>
-              <p class="mt-5 text-gray-800 dark:text-neutral-200">
-                Nicole Grazioso
+                NOTE: This guide is for Mac users using bash commands but links to windows related articles are provided below!
               </p>
             </blockquote>
+
+            <p class="text-lg text-gray-800 dark:text-neutral-200">The first part of this involves creating a simple .sh file that will be our script file that we run to generate our project's folder contents.
+              We will name ours webScaffold.sh and we can create in any folder or directory and we will move it at the end. Then open the .sh file with your favorite text editor and follow below:
+            </p>
   
-            <figure>
-              <img class="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1671726203454-488ab18f7eda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Image Description">
+            <figure class="w/10">
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-sm sm:text-base text-success"><code>#!/bin/bash</code></pre> 
+                <pre data-prefix="2" class="text-sm sm:text-base"><code></code></pre>
+                <pre data-prefix="3" class="text-sm sm:text-base"><code>if [ -z "$1" ]; then</code></pre> 
+                <pre data-prefix="4" class="text-sm sm:text-base"><code>  echo "Usage: $0 &lt;directory_name&gt;" </code></pre> 
+                <pre data-prefix="5" class="text-sm sm:text-base"><code>  exit 1</code></pre>
+                <pre data-prefix="6" class="text-sm sm:text-base"><code>fi</code></pre>
+                <pre data-prefix="7" class="text-sm sm:text-base"><code></code></pre>
+                <pre data-prefix="8" class="text-sm sm:text-base"><code>directory_name="$1"</code></pre>
+              </div>
+              <figcaption class="mt-3 text-base sm:text-lg text-center text-gray-500 dark:text-white">
+                This first section if code starts with #!/bin/bash which is called a "shebang" or "hashbang". It serves as an instruction to the operating system on how to execute the script. In this case, it tells the system to use the Bash shell to interpret and execute the commands within the script.<br>
+                Starting on line 3 we see an "if" statement that checks if there is a parameter passed with the execution of the script. This means that when we executed the script using "./webScaffold" we need to make sure we include
+                a name for the project. That is tested by "[ -z '$1' ]" meaning if there is no parameter in the 1 spot passed it will echo or print how to use the script. $0 references the file name "./webscaffold" and $1 would be the project name.
+                So we would execute it like so: "./webScaffold helloWorld", and if there is no parameter passed it exit with exit code 1. If there is a parameter passed it definies it as directory_name.
+              </figcaption>
+            </figure>
+
+            <figure class="w/10">
+              <div class="mockup-code">
+                <pre data-prefix="1" class="text-sm sm:text-base text-success"><code>#!/bin/bash</code></pre> 
+                <pre data-prefix="2" class="text-sm sm:text-base"><code>if [ -z "$1" ]; then</code></pre> 
+                <pre data-prefix="3" class="text-sm sm:text-base"><code>  echo "Usage: $0 &lt;directory_name&gt;" </code></pre> 
+                <pre data-prefix="4" class="text-sm sm:text-base"><code> exit 1</code></pre>
+              </div>
               <figcaption class="mt-3 text-base text-center text-gray-500 dark:text-neutral-500">
-                A man and a woman looking at a cell phone.
+                
               </figcaption>
             </figure>
   
@@ -48,16 +78,13 @@
               <!-- Badges/Tags -->
               <div>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
-                  Plan
+                  Unix
                 </a>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
                   Web development
                 </a>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
-                  Free
-                </a>
-                <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
-                  Team
+                  Bash
                 </a>
               </div>
               <!-- End Badges/Tags -->
@@ -68,7 +95,7 @@
       <!-- End Content -->
   
       <!-- Sidebar -->
-      <div class="rounded-lg lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-from-slate-400 lg:via-transparent lg:to-transparent dark:from-neutral-800 ">
+      <div class="rounded-lg lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-from-slate-400 lg:via-transparent lg:to-transparent dark:from-blue-900 ">
         <div class="sticky top-0 start-0 py-8 lg:ps-8">
           <!-- Avatar Media -->
           <div class="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8 dark:border-neutral-700">
@@ -85,7 +112,7 @@
               </p>
             </a>
   
-            <div class="grow">
+            <div class="grow pr-4">
               <div class="flex justify-end gap-4">
                 <a href="https://github.com/XavierLora">
                     <i class="devicon-github-original text-4xl text-white"></i>
@@ -98,7 +125,7 @@
           </div>
           <!-- End Avatar Media -->
   
-          <div class="space-y-6">
+          <div class="space-y-6 pr-4">
             <!-- Media -->
             <a class="group flex items-center gap-x-6" href="#">
               <div class="grow">

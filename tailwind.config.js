@@ -10,7 +10,7 @@ module.exports = {
         'auto-fill-325': 'repeat(auto-fit, minmax(400px, 1fr));',
       },
       scale: {
-        '200': '2.00',
+        '200': '1.50',
       }
 
     },
@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('preline/plugin'),
+    require('daisyui'),
   ],
 }
 
