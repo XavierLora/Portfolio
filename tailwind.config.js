@@ -21,7 +21,6 @@ module.exports = {
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('preline/plugin'),
-    require('daisyui'),
   ],
 }
 
