@@ -9,7 +9,7 @@
     <div class="lg:col-span-2 box-border">
       <div class="py-8 lg:pe-8 box-border">
         <div class="space-y-5 lg:space-y-8 box-border">
-          <a class="inline-flex items-center gap-x-1.5 text-base text-gray-600 decoration-2 hover:underline dark:text-blue-500" href="blog">
+          <a class="inline-flex items-center gap-x-1.5 text-lg text-gray-600 decoration-2 hover:underline dark:text-blue-500" href="blog">
             <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             Back to Blog List
           </a>
@@ -17,13 +17,13 @@
           <h2 class="text-3xl font-bold lg:text-5xl dark:text-white">Boilerplate HTML Generator (Bash Script)</h2>
 
           <div class="flex items-center gap-x-5">
-            <a class="inline-flex items-center gap-1.5 py-1 px-3 sm:py-2 sm:px-4 rounded-full text-base sm:text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-800 dark:text-neutral-200" href="#">
+            <a class="inline-flex items-center gap-1.5 py-1 px-3 sm:py-2 sm:px-4 rounded-full text-lg sm:text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-800 dark:text-neutral-200" href="#">
               COMM429 Submission
             </a>
-            <p class="text-base sm:text-base text-gray-800 dark:text-neutral-200">January 25, 2024</p>
+            <p class="text-lg sm:text-lg text-gray-800 dark:text-neutral-200">January 25, 2024</p>
           </div>
           <div class="w-full flex flex-col gap-2 p-1">
-            <p class="text-lg text-gray-800 dark:text-neutral-200">Today, we're jumping into the shallow end of the scripting pool. No fancy jargon—just pure, easy, command-line fun.<br> <br>
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Today, we're jumping into the shallow end of the scripting pool. No fancy jargon—just pure, easy, command-line fun.<br> <br>
 
               One of the most tedious parts of starting a new website has got to be creating the file structure to house all your HTML, CSS and JS. 
 
@@ -34,44 +34,187 @@
               In this post, we're going to walk you through the process of creating a bash script that'll make your life easier and your projects more efficient. Let's Get Started!</p>
   
             <blockquote class="text-center p-4 sm:px-7">
-              <p class="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
+              <p class="text-xl md:text-2xl font-medium text-gray-800 lg:text-2xl lg:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
                 NOTE: This guide is for Mac users using bash commands but links to windows related articles are provided below!
               </p>
             </blockquote>
 
-            <p class="text-lg text-gray-800 dark:text-neutral-200">The first part of this involves creating a simple .sh file that will be our script file that we run to generate our project's folder contents.
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">We can accomplish this in three easy steps:</p>
+            <ul class="space-y-3 text-sm py-2">
+              <li class="flex space-x-3 items-center">
+                <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="text-xl md:text-2xl text-neutral-400">
+                 Function Use Validation
+                </span>
+              </li>
+            
+              <li class="flex space-x-3 items-center">
+                <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="text-xl md:text-2xl text-neutral-400">
+                  Directory Check and Creation
+                </span>
+              </li>
+            
+              <li class="flex space-x-3 items-center">
+                <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span class="text-xl md:text-2xl text-neutral-400">
+                  Creating Files and Adding Content
+                </span>
+              </li>
+            </ul>
+
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">The first part of this involves creating a simple .sh file that will be our script file that we run to generate our project's folder contents.
               We will name ours webScaffold.sh and we can create in any folder or directory and we will move it at the end. Then open the .sh file with your favorite text editor and follow below:
             </p>
-
-            <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono">
+            <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Function Use Validation</h2>
+            <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
               <!-- Top bar -->
-              <div class="flex rounded-t-xl items-center h-10 px-4 bg-gray-800">
+              <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
                   <div class="h-3 w-3 mr-2 rounded-full bg-red-500"></div>
                   <div class="h-3 w-3 mr-2 rounded-full bg-yellow-500"></div>
                   <div class="h-3 w-3 rounded-full bg-green-500"></div>
               </div>
           
               <!-- CMD body -->
-              <div class="flex-1 p-4">
+              <div class="flex-1 px-4 py-2">
                   <div class="flex">
-                      <div class="mr-2">&gt;</div>
-                      <input type="text" class="flex-1 bg-gray-800 focus:outline-none" placeholder="Type your command here">
+                      <div class="mr-3 text-slate-400">1</div>
+                      <div class="flex-1 text-green-500">#!/bin/bash</div>
                   </div>
-          
-                  <div class="mt-2">
-                      <span class="text-green-500">&gt; Output:</span>
-                      <div class="bg-gray-800 p-2 mt-1">
-                          <p>This is a sample output</p>
-                      </div>
+                  <div class="flex mt-1">
+                    <div class="mr-3 text-slate-400">2</div>
+                      <div class="flex-1">if [ -z "$1" ]; then</div>
+                  </div>
+                  <div class="flex mt-1">
+                    <div class="mr-3 text-slate-400">3</div>
+                      <div class="flex-1 pl-4">echo "Usage: $0 &lt;directory_name&gt;"</div>
+                  </div>
+                  <div class="flex mt-1">
+                    <div class="mr-3 text-slate-400">4</div>
+                      <div class="flex-1 pl-4">exit 1</div>
+                  </div>
+                  <div class="flex mt-1">
+                    <div class="mr-3 text-slate-400">5</div>
+                      <div class="flex-1">fi</div>
+                  </div>
+                  <div class="flex mt-1">
+                    <div class="mr-3 text-slate-400">6</div>
+                      <div class="flex-1">directory_name="$1"</div>
                   </div>
               </div>
           </div>
 
-          <p class="text-lg text-gray-800 dark:text-neutral-200">This first section of code starts with #!/bin/bash which is called a "shebang" or "hashbang". It serves as an instruction to the operating system on how to execute the script. In this case, it tells the system to use the Bash shell to interpret and execute the commands within the script.<br>
-            Starting on line 3 we see an "if" statement that checks if there is a parameter passed with the execution of the script. This means that when we executed the script using "./webScaffold" we need to make sure we include
-            a name for the project. That is tested by "[ -z '$1' ]" meaning if there is no parameter in the 1 spot passed it will echo or print how to use the script. $0 references the file name "./webscaffold" and $1 would be the project name.
-            So we would execute it like so: "./webScaffold helloWorld", and if there is no parameter passed it exit with exit code 1. If there is a parameter passed it definies it as directory_name.
-          </p>
+          <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">In this section, the script checks if there's at least one argument provided when executing the script. If not, it prints a message indicating the correct usage of the script and exits with a status of 1. The first argument ($1) is then assigned to the variable directory_name.</p>
+          <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Directory Check and Creation</h2>
+          <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
+            <!-- Top bar -->
+            <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
+                <div class="h-3 w-3 mr-2 rounded-full bg-red-500"></div>
+                <div class="h-3 w-3 mr-2 rounded-full bg-yellow-500"></div>
+                <div class="h-3 w-3 rounded-full bg-green-500"></div>
+            </div>
+        
+            <!-- CMD body -->
+            <div class="flex-1 px-4 py-2">
+                <div class="flex">
+                    <div class="mr-3 text-slate-400">7</div>
+                    <div class="flex-1">if [ -d "$directory_name" ]; then</div>
+                </div>
+                <div class="flex mt-1">
+                  <div class="mr-3 text-slate-400">8</div>
+                    <div class="flex-1 pl-4">echo "Directory '$directory_name' already exists."</div>
+                </div>
+                <div class="flex mt-1">
+                  <div class="mr-3 text-slate-400">9</div>
+                    <div class="flex-1 pl-4">exit 1</div>
+                </div>
+                <div class="flex mt-1">
+                  <div class="mr-2 text-slate-400">10</div>
+                    <div class="flex-1">mkdir "$directory_name"</div>
+                </div>
+                <div class="flex mt-1">
+                  <div class="mr-2 text-slate-400">11</div>
+                    <div class="flex-1">echo "Directory '$directory_name' created successfully."</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Here, the script checks if a directory with the name stored in $directory_name already exists. If it does, it prints a message indicating that the directory already exists and exits with a status of 1. If the directory doesn't exist, it creates one using the mkdir command with the name stored in $directory_name, and then prints a success message.</p>
+        <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400"> Creating Files and Adding Content </h2>
+        <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
+          <!-- Top bar -->
+          <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
+              <div class="h-3 w-3 mr-2 rounded-full bg-red-500"></div>
+              <div class="h-3 w-3 mr-2 rounded-full bg-yellow-500"></div>
+              <div class="h-3 w-3 rounded-full bg-green-500"></div>
+          </div>
+      
+          <!-- CMD body -->
+          <div class="flex-1 px-4 py-2">
+              <div class="flex">
+                  <div class="mr-3 text-slate-400">12</div>
+                  <div class="flex-1">cd "$directory_name"</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">13</div>
+                  <div class="flex-1">mkdir images scripts styles</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">14</div>
+                  <div class="flex-1">touch index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">15</div>
+                  <div class="flex-1">touch styles/style.css</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">16</div>
+                  <div class="flex-1">echo "&lt;!DOCTYPE html&gt;" >> index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">17</div>
+                  <div class="flex-1">echo "&lt;html&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">18</div>
+                  <div class="flex-1">echo "	&lt;head" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">19</div>
+                  <div class="flex-1">echo "	   &lt;meta charset=\"utf-8\"&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">20</div>
+                  <div class="flex-1">echo "	   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">21</div>
+                  <div class="flex-1">echo "	   &lt;link rel=\"stylesheet\" href=\"styles/style.css\"&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">22</div>
+                  <div class="flex-1">echo "	&lt;/head&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">23</div>
+                  <div class="flex-1">echo "	&lt;body&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">24</div>
+                  <div class="flex-1">echo "	&lt;/body&gt;" &gt;&gt; index.html</div>
+              </div>
+              <div class="flex mt-1">
+                <div class="mr-3 text-slate-400">25</div>
+                  <div class="flex-1">echo "&lt;/html&gt;" &gt;&gt; index.html</div>
+              </div>
+          </div>
+      </div>
   
             
   
@@ -80,13 +223,13 @@
           <div class="grid lg:flex lg:justify-between lg:items-center gap-y-5 lg:gap-y-0">
             <!-- Badges/Tags -->
             <div>
-              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
+              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
                 Unix
               </a>
-              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
+              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
                 Web development
               </a>
-              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-base bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
+              <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
                 Bash
               </a>
             </div>
@@ -107,10 +250,10 @@
           </a>
 
           <a class="group grow block" href="">
-            <h5 class="group-hover:text-gray-600 text-base font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+            <h5 class="group-hover:text-gray-600 text-lg font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
               Xavier Lora
             </h5>
-            <p class="text-base text-gray-500 dark:text-neutral-500">
+            <p class="text-lg text-gray-500 dark:text-neutral-500">
               Web/App Enthusiast 
             </p>
           </a>
@@ -120,7 +263,7 @@
               <a href="https://github.com/XavierLora">
                   <i class="devicon-github-original text-4xl text-white"></i>
               </a>
-              <a href="https://https://www.linkedin.com/in/xavier-lora/">
+              <a href="https://www.linkedin.com/in/xavier-lora/">
                   <i class="devicon-linkedin-plain text-4xl text-white"></i>
               </a>
             </div>
@@ -130,43 +273,15 @@
 
         <div class="space-y-6 pr-4">
           <!-- Media -->
-          <a class="group flex items-center gap-x-6" href="#">
+          <a class="group flex items-center gap-x-6" href="blogPost1">
             <div class="grow">
-              <span class="text-base font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                5 Reasons to Not start a UX Designer Career in 2022/2023
+              <span class="text-lg font-bold group-hover:text-white text-slate-300">
+                Boilerplate HTML Generator (Bash Script)
               </span>
             </div>
 
             <div class="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-              <img class="size-full absolute top-0 start-0 object-cover rounded-lg" src="https://images.unsplash.com/photo-1567016526105-22da7c13161a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Image Description">
-            </div>
-          </a>
-          <!-- End Media -->
-
-          <!-- Media -->
-          <a class="group flex items-center gap-x-6" href="#">
-            <div class="grow">
-              <span class="text-base font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                If your UX Portfolio has this 20% Well Done, it Will Give You an 80% Result
-              </span>
-            </div>
-
-            <div class="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-              <img class="size-full absolute top-0 start-0 object-cover rounded-lg" src="https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Image Description">
-            </div>
-          </a>
-          <!-- End Media -->
-
-          <!-- Media -->
-          <a class="group flex items-center gap-x-6" href="#">
-            <div class="grow">
-              <span class="text-base font-bold text-gray-800 group-hover:text-blue-600 dark:text-neutral-200 dark:group-hover:text-blue-500">
-                7 Principles of Icon Design
-              </span>
-            </div>
-
-            <div class="flex-shrink-0 relative rounded-lg overflow-hidden size-20">
-              <img class="size-full absolute top-0 start-0 object-cover rounded-lg" src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" alt="Image Description">
+              <img class="size-full absolute top-0 start-0 object-cover rounded-lg" src="https://cdn.neowin.com/news/images/uploaded/2023/07/1688749943_vscode_story.jpg" alt="Image Description">
             </div>
           </a>
           <!-- End Media -->
