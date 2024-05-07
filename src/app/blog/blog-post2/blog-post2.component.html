@@ -23,56 +23,9 @@
               <p class="text-lg sm:text-lg text-gray-800 dark:text-neutral-200">March 14, 2024</p>
             </div>
             <div class="w-full flex flex-col gap-2 p-1">
-              <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Today, we're jumping into the shallow end of the scripting pool. No fancy jargon—just pure, easy, command-line fun.<br> <br>
-  
-                One of the most tedious parts of starting a new website has got to be creating the file structure to house all your HTML, CSS and JS. 
-  
-                Well, imagine this: you're staring at your screen, faced with a blank project folder. You know what you want to build, and instead of having to spend the 5 minutes to create the file scaffolding, you click one button and BAM. <br> <br>
-                
-                That's where scripting comes in. With just a few clever lines of code, you can automate the boring stuff, scaffold out your project structure, and get straight to the fun part—coding.
-                
-                In this post, we're going to walk you through the process of creating a bash script that'll make your life easier and your projects more efficient. Let's Get Started!</p>
-    
-              <blockquote class="text-center p-4 sm:px-7">
-                <p class="text-xl md:text-2xl font-medium text-gray-800 lg:text-2xl lg:leading-normal xl:text-2xl xl:leading-normal dark:text-neutral-200">
-                  NOTE: This guide is for Mac users using bash commands but links to windows related articles are provided below!
-                </p>
-              </blockquote>
-  
-              <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">We can accomplish this in three easy steps:</p>
-              <ul class="space-y-3 text-sm py-2">
-                <li class="flex space-x-3 items-center">
-                  <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span class="text-xl md:text-2xl text-neutral-400">
-                   Function Use Validation
-                  </span>
-                </li>
-              
-                <li class="flex space-x-3 items-center">
-                  <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span class="text-xl md:text-2xl text-neutral-400">
-                    Directory Check and Creation
-                  </span>
-                </li>
-              
-                <li class="flex space-x-3 items-center">
-                  <svg class="flex-shrink-0 size-5 mt-0.5 text-blue-600 dark:text-blue-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  <span class="text-xl md:text-2xl text-neutral-400">
-                    Creating Files and Adding Content
-                  </span>
-                </li>
-              </ul>
-  
-              <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">The first part of this involves creating a simple .sh file that will be our script file that we run to generate our project's folder contents.
-                We will name ours webScaffold.sh and we can create in any folder or directory and we will move it at the end. Then open the .sh file with your favorite text editor and follow below:
-              </p>
-              <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Function Use Validation</h2>
+              <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Dark mode has become an essential feature for modern websites, providing users with a comfortable viewing experience, especially in low-light environments. Integrating dark mode into your website can seem like a daunting task, but with Tailwind CSS, it's a breeze. Let's dive into how you can set up dark mode effortlessly using Tailwind CSS.</p>
+              <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Core Concepts</h2>
+              <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Dark Mode is now a first-class feature in many operating systems, and Tailwind CSS makes it easy to style your site accordingly. By leveraging Tailwind's dark variant, you can style your site differently when dark mode is enabled, without any hassle.</p>
               <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
                 <!-- Top bar -->
                 <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
@@ -82,36 +35,33 @@
                 </div>
             
                 <!-- CMD body -->
-                <div class="flex-1 px-4 py-2">
+                <div class="flex-1 px-4">
                     <div class="flex">
-                        <div class="mr-3 text-slate-400">1</div>
-                        <div class="flex-1 text-green-500">#!/bin/bash</div>
+                        <div class="mr-3 text-slate-400"></div>
+                        <div class="flex-1">
+                          &lt;div&gt; class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl"&gt;
+                        </div>
                     </div>
-                    <div class="flex mt-1">
-                      <div class="mr-3 text-slate-400">2</div>
-                        <div class="flex-1">if [ -z "$1" ]; then</div>
-                    </div>
-                    <div class="flex mt-1">
-                      <div class="mr-3 text-slate-400">3</div>
-                        <div class="flex-1 pl-4">echo "Usage: $0 &lt;directory_name&gt;"</div>
-                    </div>
-                    <div class="flex mt-1">
-                      <div class="mr-3 text-slate-400">4</div>
-                        <div class="flex-1 pl-4">exit 1</div>
-                    </div>
-                    <div class="flex mt-1">
-                      <div class="mr-3 text-slate-400">5</div>
-                        <div class="flex-1">fi</div>
-                    </div>
-                    <div class="flex mt-1">
-                      <div class="mr-3 text-slate-400">6</div>
-                        <div class="flex-1">directory_name="$1"</div>
+                </div>
+                <div class="flex-1 px-4">
+                  <div class="flex">
+                      <div class="mr-3 text-slate-400"></div>
+                      <div class="flex-1 pl-4">
+                        &lt;!-- Content --&gt;
+                      </div>
+                  </div>
+              </div>
+              <div class="flex-1 px-4 pb-2">
+                <div class="flex">
+                    <div class="mr-3 text-slate-400"></div>
+                    <div class="flex-1">
+                      &lt;/div&gt;
                     </div>
                 </div>
             </div>
-  
-            <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">In this section, the script checks if there's at least one argument provided when executing the script. If not, it prints a message indicating the correct usage of the script and exits with a status of 1. The first argument ($1) is then assigned to the variable directory_name.</p>
-            <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Directory Check and Creation</h2>
+            </div>
+            <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Basic Usage</h2>
+            <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">To enable dark mode in your Tailwind CSS project, simply add the dark variant to your utility classes. Tailwind will automatically apply these styles based on the user's system preference.</p>
             <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
               <!-- Top bar -->
               <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
@@ -121,32 +71,41 @@
               </div>
           
               <!-- CMD body -->
-              <div class="flex-1 px-4 py-2">
+              <div class="flex-1 px-4">
                   <div class="flex">
-                      <div class="mr-3 text-slate-400">7</div>
-                      <div class="flex-1">if [ -d "$directory_name" ]; then</div>
+                      <div class="mr-3 text-slate-400">1</div>
+                      <div class="flex-1">
+                        module.exports = &lcub;
+                      </div>
                   </div>
-                  <div class="flex mt-1">
-                    <div class="mr-3 text-slate-400">8</div>
-                      <div class="flex-1 pl-4">echo "Directory '$directory_name' already exists."</div>
-                  </div>
-                  <div class="flex mt-1">
-                    <div class="mr-3 text-slate-400">9</div>
-                      <div class="flex-1 pl-4">exit 1</div>
-                  </div>
-                  <div class="flex mt-1">
-                    <div class="mr-2 text-slate-400">10</div>
-                      <div class="flex-1">mkdir "$directory_name"</div>
-                  </div>
-                  <div class="flex mt-1">
-                    <div class="mr-2 text-slate-400">11</div>
-                      <div class="flex-1">echo "Directory '$directory_name' created successfully."</div>
+              </div>
+              <div class="flex-1 px-4">
+                <div class="flex">
+                    <div class="mr-3 text-slate-400">2</div>
+                    <div class="flex-1 pl-4">
+                      darkMode: 'selector',
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 px-4 pb-2">
+              <div class="flex">
+                  <div class="mr-3 text-slate-400">3</div>
+                  <div class="flex-1">
+                    // Other configurations
                   </div>
               </div>
           </div>
-  
-          <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Here, the script checks if a directory with the name stored in $directory_name already exists. If it does, it prints a message indicating that the directory already exists and exits with a status of 1. If the directory doesn't exist, it creates one using the mkdir command with the name stored in $directory_name, and then prints a success message.</p>
-          <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400"> Creating Files and Adding Content </h2>
+          <div class="flex-1 px-4 pb-2">
+            <div class="flex">
+                <div class="mr-3 text-slate-400">3</div>
+                <div class="flex-1">
+                  &rcub;
+                </div>
+            </div>
+        </div>
+          </div>
+          <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Toggling Dark Mode Manually</h2>
+          <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">If you prefer manual control over dark mode, you can use the selector strategy instead of relying on the operating system preference.</p>
           <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
             <!-- Top bar -->
             <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
@@ -156,66 +115,80 @@
             </div>
         
             <!-- CMD body -->
-            <div class="flex-1 px-4 py-2">
+            <div class="flex-1 px-4">
                 <div class="flex">
-                    <div class="mr-3 text-slate-400">12</div>
-                    <div class="flex-1">cd "$directory_name"</div>
+                    <div class="mr-3 text-slate-400"></div>
+                    <div class="flex-1">
+                      &lt;html class="dark"&gt;
+                    </div>
                 </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">13</div>
-                    <div class="flex-1">mkdir images scripts styles</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">14</div>
-                    <div class="flex-1">touch index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">15</div>
-                    <div class="flex-1">touch styles/style.css</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">16</div>
-                    <div class="flex-1">echo "&lt;!DOCTYPE html&gt;" >> index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">17</div>
-                    <div class="flex-1">echo "&lt;html&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">18</div>
-                    <div class="flex-1">echo "	&lt;head" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">19</div>
-                    <div class="flex-1">echo "	   &lt;meta charset=\"utf-8\"&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">20</div>
-                    <div class="flex-1">echo "	   &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">21</div>
-                    <div class="flex-1">echo "	   &lt;link rel=\"stylesheet\" href=\"styles/style.css\"&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">22</div>
-                    <div class="flex-1">echo "	&lt;/head&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">23</div>
-                    <div class="flex-1">echo "	&lt;body&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">24</div>
-                    <div class="flex-1">echo "	&lt;/body&gt;" &gt;&gt; index.html</div>
-                </div>
-                <div class="flex mt-1">
-                  <div class="mr-3 text-slate-400">25</div>
-                    <div class="flex-1">echo "&lt;/html&gt;" &gt;&gt; index.html</div>
+            </div>
+            <div class="flex-1 px-4">
+              <div class="flex">
+                  <div class="mr-3 text-slate-400"></div>
+                  <div class="flex-1 pl-4">
+                    &lt;!-- Content --&gt;
+                  </div>
+              </div>
+          </div>
+          <div class="flex-1 px-4 pb-2">
+            <div class="flex">
+                <div class="mr-3 text-slate-400"></div>
+                <div class="flex-1">
+                  &lt;/html&gt;
                 </div>
             </div>
         </div>
-    
+        
+        </div>
+        <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Customizing the Selector</h2>
+          <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Tailwind allows you to customize the dark mode selector to fit your specific needs. Whether you're using a framework like NativeScript or implementing your own dark mode logic, Tailwind provides flexibility.</p>
+          <div class="flex flex-col h-fit rounded-xl bg-gray-800 text-gray-200 font-mono my-2">
+            <!-- Top bar -->
+            <div class="flex rounded-t-xl items-center h-fit py-3 px-4 bg-gray-800">
+                <div class="h-3 w-3 mr-2 rounded-full bg-red-500"></div>
+                <div class="h-3 w-3 mr-2 rounded-full bg-yellow-500"></div>
+                <div class="h-3 w-3 rounded-full bg-green-500"></div>
+            </div>
+        
+            <!-- CMD body -->
+            <div class="flex-1 px-4">
+                <div class="flex">
+                    <div class="mr-3 text-slate-400">1</div>
+                    <div class="flex-1">
+                      module.exports = &lcub;
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 px-4">
+              <div class="flex">
+                  <div class="mr-3 text-slate-400">2</div>
+                  <div class="flex-1 pl-4">
+                    darkMode: ['selector', '[data-mode="dark"]'],
+                  </div>
+              </div>
+          </div>
+          <div class="flex-1 px-4 pb-2">
+            <div class="flex">
+                <div class="mr-3 text-slate-400">3</div>
+                <div class="flex-1">
+                  // Other configurations
+                </div>
+            </div>
+        </div>
+        <div class="flex-1 px-4 pb-2">
+          <div class="flex">
+              <div class="mr-3 text-slate-400">4</div>
+              <div class="flex-1">
+                &rcub;
+              </div>
+          </div>
+      </div>
+        </div>
+        <h2 class="text-2xl font-bold lg:text-5xl text-neutral-400">Wrap Up</h2>
+          <p class="text-xl md:text-2xl text-gray-800 dark:text-neutral-200">Integrating dark mode into your website has never been easier, thanks to Tailwind CSS. Whether you prefer system preference-based styling or manual control, Tailwind offers versatile solutions to suit your needs.
+
+            By following these simple steps, you can enhance your website's accessibility and provide users with a seamless browsing experience in any lighting condition. Embrace the power of dark mode with Tailwind CSS and elevate your web design to the next level.</p>
               
     
             </div>
@@ -224,13 +197,13 @@
               <!-- Badges/Tags -->
               <div>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
-                  Unix
+                  Tailwind
                 </a>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
                   Web development
                 </a>
                 <a class="m-0.5 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-lg bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200" href="#">
-                  Bash
+                  Tutorial
                 </a>
               </div>
               <!-- End Badges/Tags -->
