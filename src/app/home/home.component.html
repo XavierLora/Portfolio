@@ -1,5 +1,6 @@
 <div class="flex flex-col w-full h-fit bg-[#151d20]">
-    <div class="w-full h-screen bg-cover bg-center overflow-hidden" style="background-image: url('https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg');">
+    <div class="w-full h-screen bg-cover bg-center overflow-hidden" style="background-image: url('https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg'); -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);">
       <app-navbar></app-navbar>
       <div class="mt-20 grid grid-cols-1 grid-flow-row auto-rows-max w-full items-start text-center gap-y-0 md:grid-cols-2">
         <h1 class="text-6xl font-black text-white row-start-1 p-1 self-end md:row-start-2">Hi, I'm Xavier!</h1>
@@ -10,222 +11,390 @@
             <li>Avid Sci-Fi and Basketball fan</li>
           </ul>
         </div>
-        <img class="mt-5 scale-125 rounded-3xl row-start-3 row-end-5 md:col-start-2 md:row-start-2 lg:row-start-1" id="headShot" src="assets/imgs/headshot.png" alt="X Headshot">
+        <img class="headShot mt-5 scale-125 rounded-3xl row-start-3 row-end-5 md:col-start-2 md:row-start-2 lg:row-start-1" src="assets/imgs/headshot.png" alt="X Headshot">
       </div>
     </div>
-    <div class="w-full h-fit flex flex-col p-4 items-center">
-      <h1 class="text-center text-white p-2 pb-4 text-5xl">About Me</h1>
-      <div class="md:w-10/12 min-h-60 flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
-          <p class="mt-2 text-white text-2xl text-center ">
-            Hey, I'm X! Currently, I'm pursuing my undergraduate degree in Software Engineering at Clarkson University. Throughout my time here, I've been deeply involved in the IT sector, contributing significantly to Clarkson's technological landscape. Recently, I proudly accepted an Associate Position with Navy Federal Credit Union, where I'll be working as a Digital Engineer.
-          </p>
+    <div class="w-full h-fit flex flex-col lg:flex-row p-4">
+      <div class="lg:w-5/12">
+        <h1 class="text-white p-2 lg:ml-20 text-5xl">About Me</h1>
+        <p class="p-2 text-white text-2xl lg:ml-20 lg:mr-20">
+          Hey, I'm X! Currently, I'm pursuing my undergraduate degree in Software Engineering at Clarkson University. Throughout my time here, I've been deeply involved in the IT sector, contributing significantly to Clarkson's technological landscape. Recently, I proudly accepted an Associate Position with Navy Federal Credit Union, where I'll be working as a Digital Engineer!</p>
+      </div>
+      
+      <!-- Features -->
+    <div class="lg:w-7/12 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <!-- Tab Nav -->
+      <nav class="max-w-6xl mx-auto grid sm:flex gap-y-px sm:gap-y-0 sm:gap-x-4" aria-label="Tabs" role="tablist">
+        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex h-fit flex-col text-start con-center hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800 active" id="tabs-with-card-item-1" data-hs-tab="#tabs-with-card-1" aria-controls="tabs-with-card-1" role="tab">
+          <div class="flex gap-2">
+            <svg class="flex-shrink-0 sm:block size-7 dark:hs-tab-active:fill-blue-500 fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"/></svg>
+            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-800 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Experience and College</span>
+          </div>
+          <span class="mt-5">
+            <span class="hidden text-lg lg:block mt-2 text-gray-800 dark:text-neutral-200">My path to becoming a Web and App Dev</span>
+          </span>
+        </button>
+
+        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full h-fit flex flex-col text-start hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800" id="tabs-with-card-item-2" data-hs-tab="#tabs-with-card-2" aria-controls="tabs-with-card-2" role="tab">
+          <div class="flex gap-2">
+            <svg class="flex-shrink-0 sm:block size-7 dark:hs-tab-active:fill-blue-500 fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m260-260 300-140 140-300-300 140-140 300Zm220-180q-17 0-28.5-11.5T440-480q0-17 11.5-28.5T480-520q17 0 28.5 11.5T520-480q0 17-11.5 28.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-800 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Future Plans</span>
+          </div>
+          <span class="mt-5">
+            <span class="hidden text-lg lg:block mt-2 text-gray-800 dark:text-neutral-200">My goals as a soon to be Web Dev</span>
+          </span>
+        </button>
+
+        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800" id="tabs-with-card-item-3" data-hs-tab="#tabs-with-card-3" aria-controls="tabs-with-card-3" role="tab">
+          <div class="flex gap-2">
+            <svg class="flex-shrink-0 sm:block size-7 dark:hs-tab-active:fill-blue-500 fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
+            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-800 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Languages and Frameworks</span>
+          </div>
+          <span class="mt-5">
+            <span class="hidden text-lg lg:block mt-2 text-gray-800 dark:text-neutral-200">What I've used both in school, on my own, and on the job</span>
+          </span>
+        </button>
+      </nav>
+      <!-- End Tab Nav -->
+
+      <!-- Tab Content -->
+      <div class="mt-12 md:mt-16">
+        <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
+          <div class="flex justify-center">
+            <div class="md:w-10/12 min-h-60 flex flex-col border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+              <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
+                <p class="mt-2 text-white text-2xl text-center ">
+                  My journey in software development has been marked by diverse experiences and exciting projects. Over the past year, I've dedicated myself to mastering web development, crafting websites for both personal and public use. Notable among these are the Cranston Little League Baseball Website, an NBA Stat Tracker, and a video game Item Tracker. Additionally, I've delved into app development and embedded systems. For a comprehensive view of my work, check out my GitHub profile linked below!
+                  Check the Projects Page at the top or click <a class="font-bold text-blue-300" href="projects">here!</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- End Devices -->
+        </div>
+
+        <div id="tabs-with-card-2" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
+          <!-- Devices -->
+          <div class="flex justify-center">
+          <div class="md:w-10/12 min-h-60 flex flex-col border border-gray-200 rounded-lg shadow dark:bg-gray-900 dark:border-gray-700">
+            <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
+              <p class="mt-2 text-white text-2xl text-center ">
+                I'm incredibly excited about my upcoming role at Navy Federal this summer, where I'll be joining the Digital Engineering Team. With my extensive exposure to the company and its operations, I'm determined to secure full-time employment and continue pursuing my passion for technology and innovation.
+              </p>
+            </div>
+          </div>
+          </div>
+          <!-- End Devices -->
+        </div>
+
+        <div id="tabs-with-card-3" class="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">
+          <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <!-- Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-angular-plain colored text-6xl"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Angular
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-html5-plain-wordmark text-white text-6xl"></i> 
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    HTML
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-sass-original text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Sass/CSS
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-javascript-plain text-6xl text-white"></i> 
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    JavaScript
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-java-plain text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Java
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-tailwindcss-original text-white text-6xl"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Tailwind
+                  </h3>
+                </div>
+              </div>
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-c-plain text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    C/C++
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-githubcodespaces-plain text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    GitHub
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+          
+              <!-- Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-androidstudio-plain text-white text-6xl"></i> 
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Android Studio
+                  </h3>
+                </div>
+              </div>
+              <!-- End Icon Block -->
+              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-unix-original text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    Unix
+                  </h3>
+                </div>
+              </div>
+              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-mysql-plain-wordmark text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    SQL/mySQL
+                  </h3>
+                </div>
+              </div>
+              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
+                <!-- Icon -->
+                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                  <i class="devicon-php-plain text-6xl text-white"></i>
+                </div>
+                <!-- End Icon -->
+          
+                <div class="mt-3">
+                  <h3 class="text-lg sm:text-xl font-semibold text-white">
+                    php
+                  </h3>
+                </div>
+              </div>
         </div>
       </div>
-      <h1 class="text-center text-white p-4 text-5xl">Experience and College</h1>
-      <div class="md:w-10/12 min-h-60 flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
-          <p class="mt-2 text-white text-2xl text-center ">
-            My journey in software development has been marked by diverse experiences and exciting projects. Over the past year, I've dedicated myself to mastering web development, crafting websites for both personal and public use. Notable among these are the Cranston Little League Baseball Website, an NBA Stat Tracker, and a video game Item Tracker. Additionally, I've delved into app development and embedded systems. For a comprehensive view of my work, check out my GitHub profile linked below!
-            Check the Projects Page at the top or click <a class="font-bold text-blue-300" href="projects">here!</a>
-          </p>
+      <!-- End Tab Content -->
+    </div>
+    <!-- End Features -->
+      <!-- End Icon Blocks -->
         </div>
-      </div>
-      <h1 class="text-center text-white p-4 text-5xl">Future Plans</h1>
-      <div class="md:w-10/12  min-h-60 flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-700 dark:shadow-neutral-700/70">
-        <div class="flex flex-auto flex-col justify-center items-center p-4 md:p-5">
-          <p class="mt-2 text-white text-2xl text-center ">
-            I'm incredibly excited about my upcoming role at Navy Federal this summer, where I'll be joining the Digital Engineering Team. With my extensive exposure to the company and its operations, I'm determined to secure full-time employment and continue pursuing my passion for technology and innovation.
-          </p>
-        </div>
-      </div>
-      <!-- Icon Blocks -->
-  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  </div>
+  </div>
+  <div class="w-full h-fit p-2">
+    <!-- Features -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="relative p-6 md:p-16">
     <!-- Grid -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-angular-plain colored text-6xl"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Angular
-          </h3>
+    <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+      <div class="mb-10 h-fit lg:mb-0 lg:col-span-6 lg:col-start-7 lg:col-end-12 lg:order-2">
+        <h2 class="text-2xl text-gray-800 font-bold sm:text-3xl dark:text-neutral-200">
+          Selected Projects
+        </h2>
+        <p class="mt-2 text-white text-xl lg:w-10/12">
+          These are just a quick peak at my most recent apps, feel free to check the Blog Pages for New Updates as well as my Linkdin and GitHub for all my Public Repositories!
+        </p>
+        <!-- Tab Navs -->
+        <nav class="grid gap-4 mt-5 md:mt-10 lg:w-10/12" aria-label="Projects" role="tablist">
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700 active" id="Projects-with-card-item-1" data-hs-tab="#Projects-with-card-1" aria-controls="Projects-with-card-1" role="tab">
+            <span class="flex">
+              <a href="https://xavierlora.github.io/NBStats/">
+                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-200" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+              </a>
+              <span class="grow ms-6">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">NBStats</span>
+                <span class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">As an avid Basketball fan, I noticed there weren't alot of visually compelling Stats Sites. Well, Here you go.</span>
+              </span>
+            </span>
+          </button>
+
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700" id="Projects-with-card-item-2" data-hs-tab="#Projects-with-card-2" aria-controls="Projects-with-card-2" role="tab">
+            <span class="flex">
+              <a href="https://xavierlora.github.io/ZeldaApiApp/">
+                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-200" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+              </a>
+              <span class="grow ms-6">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">ZeldaApi Tracker</span>
+                <span class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">Being a Big Fan of the recent Zelda games, I was able to use a Rest API to creat an ingame item Tracker.</span>
+              </span>
+            </span>
+          </button>
+
+          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700" id="Projects-with-card-item-3" data-hs-tab="#Projects-with-card-3" aria-controls="Projects-with-card-3" role="tab">
+            <span class="flex">
+              <a href="https://clcfbaseball.com">
+                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-200" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+              </a>
+              <span class="grow ms-6">
+                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-800 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">CLCF Baseball</span>
+                <span class="block mt-1 text-gray-800 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">I was fortunate enough to have the opportunity to work with CLCF Baseball and design their latest site!</span>
+              </span>
+            </span>
+          </button>
+        </nav>
+        <!-- End Tab Navs -->
+      </div>
+      <!-- End Col -->
+
+      <div class="lg:col-span-6 sm:scale-80">
+        <div class="relative">
+          <!-- Tab Content -->
+          <div>
+            <div id="Projects-with-card-1" role="tabpanel" aria-labelledby="Projects-with-card-item-1">
+              <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] lg: aspect-w-9 aspect-h-16">
+                <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
+                    <iframe src="https://xavierlora.github.io/NBStats/" alt="NBAStats" scrolling="no"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div id="Projects-with-card-2" class="hidden" role="tabpanel" aria-labelledby="Projects-with-card-item-2">
+              <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] lg: aspect-w-9 aspect-h-16">
+                <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
+                    <iframe src="https://xavierlora.github.io/ZeldaApiApp/" alt="NBAStats" scrolling="no"></iframe>
+                </div>
+              </div>
+            </div>
+
+            <div id="Projects-with-card-3" class="hidden" role="tabpanel" aria-labelledby="Projects-with-card-item-3">
+              <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] lg: aspect-w-9 aspect-h-16">
+                <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+                <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+                <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+                <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
+                    <iframe src="https:clcfbaseball.com" alt="NBAStats" scrolling="no"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Tab Content -->
+
+          <!-- SVG Element -->
+          <div class="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+            <img class="inline-block size-[66px] invert rounded-lg" src="assets/imgs/logoBckgroundRemoved.png" alt="X Logo">
+          </div>
+          <!-- End SVG Element -->
         </div>
       </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-html5-plain-wordmark text-white text-6xl"></i> 
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            HTML
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-sass-original text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Sass/CSS
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-javascript-plain text-6xl text-white"></i> 
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            JavaScript
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-java-plain text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Java
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-tailwindcss-original text-white text-6xl"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Tailwind
-          </h3>
-        </div>
-      </div>
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-c-plain text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            C/C++
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-githubcodespaces-plain text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            GitHub
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-  
-      <!-- Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-androidstudio-plain text-white text-6xl"></i> 
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Android Studio
-          </h3>
-        </div>
-      </div>
-      <!-- End Icon Block -->
-      <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-unix-original text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            Unix
-          </h3>
-        </div>
-      </div>
-      <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-mysql-plain-wordmark text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            SQL/mySQL
-          </h3>
-        </div>
-      </div>
-      <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-        <!-- Icon -->
-        <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-          <i class="devicon-php-plain text-6xl text-white"></i>
-        </div>
-        <!-- End Icon -->
-  
-        <div class="mt-3">
-          <h3 class="text-lg sm:text-xl font-semibold text-white">
-            php
-          </h3>
-        </div>
-      </div>
+      <!-- End Col -->
     </div>
     <!-- End Grid -->
-  </div>
-  <!-- End Icon Blocks -->
+
+    <!-- Background Color -->
+    <div class="absolute inset-0 grid grid-cols-12 size-full lg:scale-80">
+      <div class="col-span-full lg:col-span-7 lg:col-start-5 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full bg-gray-900"></div>
     </div>
+    <!-- End Background Color -->
+  </div>
+</div>
+<!-- End Features -->
+
   </div>
   <app-footer></app-footer>
   
