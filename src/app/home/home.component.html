@@ -25,35 +25,17 @@
     <div class="lg:w-7/12 px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <!-- Tab Nav -->
       <nav class="max-w-6xl mx-auto grid sm:flex gap-y-px sm:gap-y-0 sm:gap-x-4" aria-label="Tabs" role="tablist">
-        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex h-fit flex-col text-start con-center hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800 active" id="tabs-with-card-item-1" data-hs-tab="#tabs-with-card-1" aria-controls="tabs-with-card-1" role="tab">
-          <div class="flex gap-2">
-            <svg class="flex-shrink-0 sm:block size-7 hs-tab-active:fill-blue-500 dark:hs-tab-active:fill-blue-500 fill-gray-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120 200-272v-240L40-600l440-240 440 240v320h-80v-276l-80 44v240L480-120Zm0-332 274-148-274-148-274 148 274 148Zm0 241 200-108v-151L480-360 280-470v151l200 108Zm0-241Zm0 90Zm0 0Z"/></svg>
-            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-500 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Experience and College</span>
-          </div>
-          <span class="mt-5">
-            <span class="hidden text-lg lg:block mt-2 text-gray-800 dark:text-neutral-200">My path to becoming a Web and App Dev</span>
-          </span>
-        </button>
-
-        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full h-fit flex flex-col text-start hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800" id="tabs-with-card-item-2" data-hs-tab="#tabs-with-card-2" aria-controls="tabs-with-card-2" role="tab">
-          <div class="flex gap-2">
-            <svg class="flex-shrink-0 hs-tab-active:fill-blue-500 sm:block size-7 dark:hs-tab-active:fill-blue-500 fill-gray-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m260-260 300-140 140-300-300 140-140 300Zm220-180q-17 0-28.5-11.5T440-480q0-17 11.5-28.5T480-520q17 0 28.5 11.5T520-480q0 17-11.5 28.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
-            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-500 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Future Plans</span>
-          </div>
-          <span class="mt-5">
-            <span class="hidden text-lg lg:block mt-2 text-gray-500 dark:text-neutral-200">My goals as a soon to be Web Dev</span>
-          </span>
-        </button>
-
-        <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex flex-col text-start hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800" id="tabs-with-card-item-3" data-hs-tab="#tabs-with-card-3" aria-controls="tabs-with-card-3" role="tab">
-          <div class="flex gap-2">
-            <svg class="flex-shrink-0 sm:block size-7 hs-tab-active:fill-blue-500 dark:hs-tab-active:fill-blue-500 fill-gray-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/></svg>
-            <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-500 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">Languages and Frameworks</span>
-          </div>
-          <span class="mt-5">
-            <span class="hidden text-lg lg:block mt-2 text-gray-500 dark:text-neutral-200">What I've used both in school, on my own, and on the job</span>
-          </span>
-        </button>
+        @for ( text of aboutMeText; track text ) {
+          <button type="button" class="hs-tab-active:bg-gray-100 hs-tab-active:hover:border-transparent w-full flex h-fit flex-col text-start con-center hover:bg-gray-100 p-3 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-800 {{text.state}}" id="tabs-with-card-item-{{text.id}}" [attr.data-hs-tab]="'#tabs-with-card-'+text.id" attr.aria-controls="tabs-with-card-{{text.id}}" role="tab">
+            <div class="flex gap-2">
+              <svg class="flex-shrink-0 sm:block size-7 hs-tab-active:fill-blue-500 dark:hs-tab-active:fill-blue-500 fill-gray-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path attr.d="{{text.path}}"/></svg>
+              <span class="hs-tab-active:text-blue-600 block font-semibold text-gray-500 text-xl dark:hs-tab-active:text-blue-500 dark:text-neutral-200">{{text.title}}</span>
+            </div>
+            <span class="mt-5">
+              <span class="hidden text-lg lg:block mt-2 text-gray-800 dark:text-neutral-200">{{text.subtext}}</span>
+            </span>
+          </button>
+        }
       </nav>
       <!-- End Tab Nav -->
 
@@ -92,183 +74,28 @@
             <!-- Grid -->
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-angular-plain colored text-6xl"></i>
+               @for ( code of codingLangs; track code ){
+                <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
+                  <!-- Icon -->
+                  <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
+                    <i class="{{ code.class }} text-white text-6xl p-1"></i>
+                  </div>
+                  <!-- End Icon -->
+            
+                  <div class="mt-3 flex flex-col items-center">
+                    <h3 class="text-lg sm:text-xl font-semibold text-white">{{ code.name }}</h3>
+                    <div class="flex m-1">
+                      @for (star of [0,1,2,3,4]; track $index){
+                        @if(this.code.stars > $index){
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="size-5">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+                          </svg> 
+                        }
+                      }  
+                    </div>                 
+                  </div>
                 </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Angular
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-html5-plain-wordmark text-white text-6xl"></i> 
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    HTML
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-sass-original text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Sass/CSS
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-javascript-plain text-6xl text-white"></i> 
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    JavaScript
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-java-plain text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Java
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-tailwindcss-original text-white text-6xl"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Tailwind
-                  </h3>
-                </div>
-              </div>
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-c-plain text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    C/C++
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-githubcodespaces-plain text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    GitHub
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-          
-              <!-- Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-androidstudio-plain text-white text-6xl"></i> 
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Android Studio
-                  </h3>
-                </div>
-              </div>
-              <!-- End Icon Block -->
-              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-unix-original text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    Unix
-                  </h3>
-                </div>
-              </div>
-              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-mysql-plain-wordmark text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    SQL/mySQL
-                  </h3>
-                </div>
-              </div>
-              <div class="h-36 sm:h-56 flex flex-col justify-center   rounded-xl text-center p-4 md:p-5">
-                <!-- Icon -->
-                <div class="flex justify-center items-center size-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg mx-auto">
-                  <i class="devicon-php-plain text-6xl text-white"></i>
-                </div>
-                <!-- End Icon -->
-          
-                <div class="mt-3">
-                  <h3 class="text-lg sm:text-xl font-semibold text-white">
-                    php
-                  </h3>
-                </div>
-              </div>
+               }
         </div>
       </div>
       <!-- End Tab Content -->
@@ -293,41 +120,19 @@
         </p>
         <!-- Tab Navs -->
         <nav class="grid gap-4 mt-5 md:mt-10 lg:w-10/12" aria-label="Projects" role="tablist">
-          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700 active" id="Projects-with-card-item-1" data-hs-tab="#Projects-with-card-1" aria-controls="Projects-with-card-1" role="tab">
-            <span class="flex">
-              <a href="https://xavierlora.github.io/NBStats/">
-                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-200" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
-              </a>
-              <span class="grow ms-6">
-                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-500 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">NBStats</span>
-                <span class="block mt-1 text-gray-500 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">As an avid Basketball fan, I noticed there weren't alot of visually compelling Stats Sites. Well, Here you go.</span>
+          @for(project of projectList; track project) {
+            <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700 {{project.state}}" id="Projects-with-card-item-{{project.id}}" [attr.data-hs-tab]="'#Projects-with-card-'+project.id" attr.aria-controls="Projects-with-card-{{project.id}}" role="tab">
+              <span class="flex">
+                <a href="{{project.url}}">
+                  <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-200" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+                </a>
+                <span class="grow ms-6">
+                  <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-500 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">{{project.title}}</span>
+                  <span class="block mt-1 text-gray-500 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">{{project.subtext}}</span>
+                </span>
               </span>
-            </span>
-          </button>
-
-          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700" id="Projects-with-card-item-2" data-hs-tab="#Projects-with-card-2" aria-controls="Projects-with-card-2" role="tab">
-            <span class="flex">
-              <a href="https://xavierlora.github.io/ZeldaApiApp/">
-                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
-              </a>
-              <span class="grow ms-6">
-                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-500 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">ZeldaApi Tracker</span>
-                <span class="block mt-1 text-gray-500 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">Being a Big Fan of the recent Zelda games, I was able to use a Rest API to creat an ingame item Tracker.</span>
-              </span>
-            </span>
-          </button>
-
-          <button type="button" class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-800 dark:hover:bg-neutral-700" id="Projects-with-card-item-3" data-hs-tab="#Projects-with-card-3" aria-controls="Projects-with-card-3" role="tab">
-            <span class="flex">
-              <a href="https://clcfbaseball.com">
-                <svg class="flex-shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-blue-600 hs-tab-active:fill-blue-500 fill-neutral-500" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
-              </a>
-              <span class="grow ms-6">
-                <span class="block text-lg font-semibold hs-tab-active:text-blue-600 text-gray-500 dark:hs-tab-active:text-blue-500 dark:text-neutral-200">CLCF Baseball</span>
-                <span class="block mt-1 text-gray-500 dark:hs-tab-active:text-gray-200 dark:text-neutral-200">I was fortunate enough to have the opportunity to work with CLCF Baseball and design their latest site!</span>
-              </span>
-            </span>
-          </button>
+            </button>
+          }
         </nav>
         <!-- End Tab Navs -->
       </div>
@@ -344,7 +149,7 @@
                 <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
                 <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                 <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
-                    <iframe src="https://xavierlora.github.io/NBStats/" alt="NBAStats" scrolling="no"></iframe>
+                    <embed class="w-full" src="https://xavierlora.github.io/NBStats/" alt="NBAStats" scrolling="no">
                 </div>
               </div>
             </div>
@@ -356,7 +161,7 @@
                 <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
                 <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                 <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
-                    <iframe src="https://xavierlora.github.io/ZeldaApiApp/" alt="ZeldaApi" scrolling="no"></iframe>
+                    <embed class="w-full" src="https://xavierlora.github.io/ZeldaApiApp/" alt="ZeldaApi" scrolling="no">
                 </div>
               </div>
             </div>
@@ -368,7 +173,7 @@
                 <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
                 <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                 <div class="rounded-[2rem] overflow-hidden aspect-w-9 aspect-h-16 bg-white dark:bg-gray-800">
-                    <iframe src="https://www.clcfbaseball.com/index.html" alt="CLCFBaseball" scrolling="no"></iframe>
+                    <embed class="w-full" src="https://www.clcfbaseball.com/index.html" alt="CLCFBaseball" scrolling="no">
                 </div>
               </div>
             </div>

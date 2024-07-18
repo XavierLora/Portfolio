@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router, Event, NavigationEnd } from '@angular/router';
+import { HSTabs } from 'preline/preline';
 
 import { IStaticMethods } from 'preline/preline';
 declare global {
