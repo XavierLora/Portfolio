@@ -6,11 +6,10 @@ import { HSTabs } from 'preline/preline';
 
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [NavbarComponent, FooterComponent, CommonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    imports: [NavbarComponent, FooterComponent, CommonModule],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
     aboutMeText: any = [
