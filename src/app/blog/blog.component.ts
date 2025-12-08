@@ -1,14 +1,12 @@
 import { Component, signal, OnInit, computed } from '@angular/core';
 import { NavbarComponent } from '../layout/navbar/navbar.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { BlogPost2Component } from './blog-post2/blog-post2.component';
-import { BlogPost3Component } from './blog-post3/blog-post3.component';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { BLOG_POST_TAGS, postTag } from './shared/constants';
 
 @Component({
     selector: 'app-blog',
-    imports: [NavbarComponent, BlogPostComponent, BlogPost2Component, BlogPost3Component],
+    imports: [NavbarComponent, RouterLink, RouterOutlet],
     templateUrl: './blog.component.html',
-    styleUrl: './blog.component.scss'
 })
 export class BlogComponent{
 
@@ -17,18 +15,12 @@ export class BlogComponent{
   careerPostColorStatus = signal("iconDefault");
   tutorialPostColorStatus = signal("iconDefault");
 
-  postTags: any = [
-    {
-      tag: "Career",
-    },
-    {
-      tag: "Tutorial",
-    }
-  ]
+  postTags: postTag[] = BLOG_POST_TAGS;
 
+  //TODO: move this to constants file and import
   blogPostHeaderContent: any = [
     {
-      url: "blogPost3",
+      url: "blog/blogPost3",
       tag: "Career",
       title: "My Pursuit of Happiness",
       author: "Xavier Lora",
@@ -36,7 +28,7 @@ export class BlogComponent{
       authorTitle: "Web/App Enthusiast"
     },
     {
-      url: "blogPost2",
+      url: "blog/blogPost2",
       tag: "Tutorial",
       title: "Guide to Setting up Dark Mode with Tailwind",
       author: "Xavier Lora",
@@ -44,7 +36,7 @@ export class BlogComponent{
       authorTitle: "Web/App Enthusiast"
     },
     {
-      url: "blogPost1",
+      url: "blog/blogPost1",
       tag: "Career",
       title: "My Internship Experience as a Front End Web Developer",
       author: "Xavier Lora",

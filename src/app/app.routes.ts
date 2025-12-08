@@ -20,15 +20,15 @@ export const routes: Routes = [
         component: BlogComponent,
     },
     {
-        path: 'blogPost1',
+        path: 'blog/blogPost1',
         component: BlogPostComponent,
     },
     {
-        path: 'blogPost2',
+        path: 'blog/blogPost2',
         component: BlogPost2Component,
     },
     {
-        path: 'blogPost3',
+        path: 'blog/blogPost3',
         component: BlogPost3Component,
     }
 ];

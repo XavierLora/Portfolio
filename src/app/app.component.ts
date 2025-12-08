@@ -1,34 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Router, Event, NavigationEnd } from '@angular/router';
-import { HSTabs } from 'preline/preline';
-
-import { IStaticMethods } from 'preline/preline';
-declare global {
-  interface Window {
-    HSStaticMethods: IStaticMethods;
-  }
-}
-
 
 @Component({
     selector: 'app-root',
     imports: [RouterOutlet],
     templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'newPortfolio';
-  constructor(private router: Router) {
-  
-  }
-
-  ngOnInit() {
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          window.HSStaticMethods.autoInit();
-        }, 100);
-      }
-    });
-  }
-}
+export class AppComponent { }
