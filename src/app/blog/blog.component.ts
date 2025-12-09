@@ -1,11 +1,11 @@
 import { Component, signal, OnInit, computed } from '@angular/core';
 import { NavbarComponent } from '../layout/navbar/navbar.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BLOG_POST_HEADER_CONTENT, BLOG_POST_TAGS, BlogPostHeaderContent, PostTag } from './shared/constants';
 
 @Component({
     selector: 'app-blog',
-    imports: [NavbarComponent, RouterLink, RouterOutlet],
+    imports: [NavbarComponent, RouterLink],
     templateUrl: './blog.component.html',
 })
 export class BlogComponent{
