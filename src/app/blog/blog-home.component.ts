@@ -4,9 +4,9 @@ import { RouterLink } from '@angular/router';
 import { BLOG_POST_HEADER_CONTENT, BLOG_POST_TAGS, BlogPostHeaderContent, PostTag } from './shared/constants';
 
 @Component({
-    selector: 'app-blog',
+    selector: 'blog-home',
     imports: [NavbarComponent, RouterLink],
-    templateUrl: './blog.component.html',
+    templateUrl: './blog-home.component.html',
 })
 export class BlogComponent{
 

@@ -1,34 +1,26 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { BlogComponent } from './blog/blog.component';
-import { BlogPostComponent } from './blog/blog-post/blog-post.component';
-import { BlogPost2Component } from './blog/blog-post2/blog-post2.component';
-import { BlogPost3Component } from './blog/blog-post3/blog-post3.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
+        loadComponent: () => import('./home/home.component').then(m => m.HomeComponent),
     },
     {
+        //TODO: Clean up component before reimplementing and add lazy loading
         path: 'projects',
         component: ProjectsComponent,
     },
     {
         path: 'blog',
-        component: BlogComponent,
+        loadComponent: () => import('./blog/blog-home.component').then(m => m.BlogComponent),
     },
     {
-        path: 'blog/blogPost1',
-        component: BlogPostComponent,
+        path: 'blog/My-Pursuit-Of-Happiness',
+        loadComponent: () => import('./blog/blog-posts/Pursuit-Of-Happiness/Pursuit-Of-Happiness.component').then(m => m.PursuitOfHappinessComponent),
     },
     {
-        path: 'blog/blogPost2',
-        component: BlogPost2Component,
-    },
-    {
-        path: 'blog/blogPost3',
-        component: BlogPost3Component,
+        path: 'blog/Web-Development-as-a-Career',
+        loadComponent: () => import('./blog/blog-posts/Web-Development-Career/Web-Development-Career.component').then(m => m.WebDevelopmentCareerComponent),
     }
 ];

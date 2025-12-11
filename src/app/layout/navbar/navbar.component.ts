@@ -12,10 +12,12 @@ export class NavbarComponent {
   /* Dependencies */
   readonly router = inject(Router);
 
+  /* UI and State Controls */
   navMenuItems = NAVBAR_MENU_ITEMS;
   isNavbarOpen = signal(false);
 
-  toggleNavbar() {
+  /* Toggles nav bar open/close in MOB*/
+  toggleNavbar(): void {
     this.isNavbarOpen.set(!this.isNavbarOpen());
   }  
 }

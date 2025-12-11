@@ -1,33 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarComponent } from './navbar.component';
+import { WebDevelopmentCareerComponent } from './Web-Development-Career.component';
 import { ActivatedRoute } from '@angular/router';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('WebDevelopmentCareerComponent', () => {
+  let component: WebDevelopmentCareerComponent;
+  let fixture: ComponentFixture<WebDevelopmentCareerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent],
+      imports: [WebDevelopmentCareerComponent],
       providers: [
         { provide: ActivatedRoute, useValue: {} },
       ],
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(WebDevelopmentCareerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should toggle navbar state', () => {
-    component.isNavbarOpen.set(false);
-    component.toggleNavbar();
-    expect(component.isNavbarOpen()).toBe(true);
   });
 });
