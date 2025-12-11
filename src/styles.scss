@@ -18,3 +18,7 @@ html, body, app-root{
 #debug{
     border: solid 1px red;
 }
+
+//TODO: move these to export files and import
+@import 'styles/components/blog.component.scss';
+@import 'styles/components/home.component.scss';

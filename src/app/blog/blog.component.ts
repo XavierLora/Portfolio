@@ -1,58 +1,22 @@
 import { Component, signal, OnInit, computed } from '@angular/core';
 import { NavbarComponent } from '../layout/navbar/navbar.component';
-import { BlogPostComponent } from './blog-post/blog-post.component';
-import { BlogPost2Component } from './blog-post2/blog-post2.component';
-import { BlogPost3Component } from './blog-post3/blog-post3.component';
+import { RouterLink } from '@angular/router';
+import { BLOG_POST_HEADER_CONTENT, BLOG_POST_TAGS, BlogPostHeaderContent, PostTag } from './shared/constants';
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [NavbarComponent, BlogPostComponent, BlogPost2Component, BlogPost3Component],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [NavbarComponent, RouterLink],
+    templateUrl: './blog.component.html',
 })
 export class BlogComponent{
 
-  filteredList:any = signal([]);
+  filteredList = signal<BlogPostHeaderContent[]>([]);
   allPostColorStatus = signal("text-blue-500");
   careerPostColorStatus = signal("iconDefault");
   tutorialPostColorStatus = signal("iconDefault");
 
-  postTags: any = [
-    {
-      tag: "Career",
-    },
-    {
-      tag: "Tutorial",
-    }
-  ]
-
-  blogPostHeaderContent: any = [
-    {
-      url: "blogPost3",
-      tag: "Career",
-      title: "My Pursuit of Happiness",
-      author: "Xavier Lora",
-      authorPic: "assets/imgs/headshotXavierLora.png",
-      authorTitle: "Web/App Enthusiast"
-    },
-    {
-      url: "blogPost2",
-      tag: "Tutorial",
-      title: "Guide to Setting up Dark Mode with Tailwind",
-      author: "Xavier Lora",
-      authorPic: "assets/imgs/headshotXavierLora.png",
-      authorTitle: "Web/App Enthusiast"
-    },
-    {
-      url: "blogPost1",
-      tag: "Career",
-      title: "My Internship Experience as a Front End Web Developer",
-      author: "Xavier Lora",
-      authorPic: "assets/imgs/headshotXavierLora.png",
-      authorTitle: "Web/App Enthusiast"
-    },
-  ];
+  postTags: PostTag[] = BLOG_POST_TAGS;
+  blogPostHeaderContent: BlogPostHeaderContent[] = BLOG_POST_HEADER_CONTENT;
 
   ngOnInit(){
     this.filteredList.set(this.blogPostHeaderContent);
@@ -65,14 +29,14 @@ export class BlogComponent{
     this.tutorialPostColorStatus.set("iconDefault");
   }
 
-  filterList(post: any){
-    const list: any[] = this.blogPostHeaderContent.filter((item: { tag: any; }) => item.tag === post.tag);
+  filterList(post: PostTag){
+    const list: BlogPostHeaderContent[] = this.blogPostHeaderContent.filter((item: { tag: any; }) => item.tag === post.tag);
     this.filteredList.set(list);
     this.iconColor(post);
     this.allPostColorStatus.set("text-white");
   }
 
-  iconColor(post: any){
+  iconColor(post: PostTag){
     this.careerPostColorStatus.set("iconDefault");
     this.tutorialPostColorStatus.set("iconDefault");
     if(post.tag === "Career"){
