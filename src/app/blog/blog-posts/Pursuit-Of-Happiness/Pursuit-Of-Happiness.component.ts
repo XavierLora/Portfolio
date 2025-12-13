@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../../layout/navbar/navbar.component';
+import { BlogTemplateComponent } from '../../shared/components/blog-template.component';
 
 @Component({
-  selector: 'app-blog-post3',
-  imports: [NavbarComponent],
+  selector: 'app-pursuit-of-happiness',
+  imports: [BlogTemplateComponent],
   templateUrl: './Pursuit-Of-Happiness.component.html',
 })
 export class PursuitOfHappinessComponent {}

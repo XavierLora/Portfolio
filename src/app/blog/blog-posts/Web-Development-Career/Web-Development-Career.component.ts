@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from '../../../layout/navbar/navbar.component';
+import { BlogTemplateComponent } from '../../shared/components/blog-template.component';
 
 @Component({
-  selector: 'app-blog-post',
-  imports: [NavbarComponent],
+  selector: 'app-web-development-career',
+  imports: [BlogTemplateComponent],
   templateUrl: './Web-Development-Career.component.html',
 })
 export class WebDevelopmentCareerComponent {}
