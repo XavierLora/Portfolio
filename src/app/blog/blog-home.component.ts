@@ -1,14 +1,18 @@
-import { Component, signal, OnInit, computed } from '@angular/core';
+import { Component, signal, OnInit, computed, inject } from '@angular/core';
 import { NavbarComponent } from '../layout/navbar/navbar.component';
-import { RouterLink } from '@angular/router';
-import { BLOG_POST_HEADER_CONTENT, BLOG_POST_TAGS, BlogPostHeaderContent, PostTag } from './shared/constants';
+import { Router } from '@angular/router';
+import { BLOG_POST_HEADER_CONTENT, BLOG_POST_TAGS } from './shared/constants';
+import { BlogPostHeaderContent, PostTag } from '../../shared/interfaces/blog-content/blog-content.consants';
+import { BlogContentService } from '../../shared/services/blog-content-service/blog-content.service';
 
 @Component({
     selector: 'blog-home',
-    imports: [NavbarComponent, RouterLink],
+    imports: [NavbarComponent],
     templateUrl: './blog-home.component.html',
 })
 export class BlogComponent{
+  private router = inject(Router);
+  private blogContentService = inject(BlogContentService);
 
   filteredList = signal<BlogPostHeaderContent[]>([]);
   allPostColorStatus = signal("text-blue-500");
@@ -44,5 +48,10 @@ export class BlogComponent{
     }else{
       this.tutorialPostColorStatus.set("iconHighlight");
     }
+  }
+
+  routeToBlogPost(post: BlogPostHeaderContent){
+    this.blogContentService.currentPost.set(post);
+    this.router.navigateByUrl(post.url);
   }
 }
