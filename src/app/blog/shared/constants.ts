@@ -18,6 +18,7 @@ export const BLOG_POST_HEADER_CONTENT: BlogPostHeaderContent[] = [
     authorPic: 'assets/imgs/headshotXavierLora.png',
     authorTitle: 'Web/App Enthusiast',
     date: 'December 13, 2025',
+    postImage: 'assets/imgs/happiness.jpg',
   },
   // {
   //   url: 'blog/Web-Development-as-a-Career',

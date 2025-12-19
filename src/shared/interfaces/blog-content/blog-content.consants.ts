@@ -10,4 +10,5 @@ export interface BlogPostHeaderContent {
   authorPic: string;
   authorTitle: string;
   date: string;
+  postImage: string;
 }

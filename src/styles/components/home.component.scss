@@ -3,6 +3,12 @@
   mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
 
+.background-image {
+  background-image: url("https://demos.creative-tim.com/paper-kit-2-pro/assets/img/sections/pk-pro-cover.jpg");
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+}
+
 .rolodex {
   height: 2em;
   overflow: hidden;

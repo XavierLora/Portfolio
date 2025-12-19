@@ -1,3 +1,4 @@
+@use "sass:meta";
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -20,5 +21,5 @@ html, body, app-root{
 }
 
 //TODO: move these to export files and import
-@import 'styles/components/blog.component.scss';
-@import 'styles/components/home.component.scss';
+@include meta.load-css('styles/components/blog.component.scss');
+@include meta.load-css('styles/components/home.component.scss');
